@@ -5,8 +5,36 @@ before_script:
 
 # TODO: define the stages for this pipeline, then add the jobs for the
 # remaining stages. Each job should run the matching Makefile target.
+stages:
+    - compile
+    - test
+    - package
+    - deploy
+
 
 compile:
   stage: compile
   script:
     - make compile
+    - echo "Compile stage completed."
+
+test:
+  stage: test
+  script:
+    - make test
+    - echo "Test stage completed."
+
+package:
+  stage: package
+  script:
+    - make package
+    - artifacts:
+        paths:
+          - target/*.jar
+        expire_in: 1 week
+
+deploy:
+  stage: deploy
+  script:
+    - make deploy
+    - echo "Deploy stage completed."

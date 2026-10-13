@@ -2,103 +2,206 @@ DO NOT CHANGE THE FORMAT -- DO NOT CREATE A NEW txt file
 
 === Question 1.1 (4 marks) ===
 #Answer below
+Waterfall vs Agile Delivery:
+Waterfall is a software development process that includes sequential phases of development, with fixed user requirements/specifications, a big upfront design
+where consumers/stakeholders see the final product at the end of the production and changes are expensive and late.
+Agile(time-boxed) delivery is a software development process that includes iterative and incremental phases of development, with flexible user requirements/specifications, a small upfront design where consumers/stakeholders see the finished product at the end of each iteration and changes are easy and early.
 
+Organising people into smaller, multidisciplinary teams that deliver in short cycles improves the time it takes to get a product to market because it allows for faster feedback loops, quicker identification of issues, and the ability to adapt to change.
 
 === Question 1.2 (6 marks) ===
 #For each guardrail: what it is, when or how often it happens, and what problem it prevents.
 #Include how progress is made visible, and how the team will inspect and adapt.
 #Answer below
+Basic guardrails to implement for betteer team coordination and communication:
+1. Daily Stand-ups: A short daily meeting where team members share what they did, what they plan to do, and any blockers they are facing. This helps to keep everyone informed and aligned on the team's progress and goals.
+2. Sprint Planning: A meeting at the beginning of each sprint where the team plans the work to be done in the upcoming sprint. This helps to ensure that everyone is on the same page and that the team is working towards a common goal.
+3. Retrospectives: A meeting at the end of each sprint where the team reflects on what went well, what didn't go well, and what can be improved for the next sprint. This helps to identify areas for improvement and to make adjustments to the team's processes and practices.
+4. Backlog Grooming: A meeting where the team reviews and prioritizes the items in the product backlog.
+5. Definition of Done: A clear and agreed-upon set of criteria that must be met for a user story or task to be considered complete. This helps to ensure that the team is delivering high-quality work and that everyone has a shared understanding of what "done" means.
+6. Continuous Integration and Deployment: A practice where code changes are automatically built, tested, and deployed to production. This helps to ensure that the team is delivering working software frequently and that any issues are identified and addressed quickly.
 
+teams will see progress of every piece of work in the sprint backlog, and they will inspect and adapt their processes and practices during retrospectives to continuously improve their performance.
+The team can inspect and adapt through regular reviews of their work, feedback from stakeholders, and by analysing metrics such as velocity and cycle time. This allows the team to identify areas for improvement and make adjustments to their processes and practices as needed.
 
 === Question 1.3 (3 marks) ===
 #Answer below
+Velocity is a measure of the amount of work a team can complete in a given timeframe, usually a sprint.
+It is typically measured in story points or hours and is used to help teams estimate how much work they can take on in future sprints.
+Formula: Sum(completed story point or hours)/Number of sprints completed.
+This gives the team an average velocity that can be used to plan future sprints and make informed decisions about how much work to take on.
+The teams velocity should not be used as a target to be pushed up, but rather as a tool to help the team understand their capacity and make informed decisions about how much work to take on in future sprints.
 
 
 === Question 2.2 (8 marks) ===
 #Pillar 1
 #Name and definition:
+Encapsulation - the practice of restricting direct access to some of an objects internal data and only allowing it through well-defined public methods that can operate on that data.
+Encapsulation involves bundling data(private fields/attributes) and methods that operate on that data into a singular unit or class, and controlling access to that data through access modifiers.
 #How to recognise it in a codebase:
+We can recognise encapsulation in a codebase by looking for classes that have private fields and public methods that provide controlled access to those fields. The use of access modifiers (private, protected, public) is a key indicator of encapsulation.
 #Example from the sales package (class and field / method / declaration), and why:
+
 
 #Pillar 2
 #Name and definition:
+Inheritance - the practice of creating new classes((child classes) that are based on existing classes (parent classes), allowing them to inherit properties and behaviours from the parent class to reuse their code and create a hierarchical relationship between classes.
+
 #How to recognise it in a codebase:
+We can recognise inheritance in a codebase by looking for classes that "extend" or "implement" other classes or interfaces. The use of the "extends" keyword in class declarations is a key indicator of inheritance.
 #Example from the sales package (class and field / method / declaration), and why:
 
 #Pillar 3
 #Name and definition:
+Polymorphism - allows different classes to be treated as instances of the same class through a common interface, enabling objects of different types to be used interchangeably and  allowing for flexibility and extensibility in code design.
+Polymorphism can be achieved through method overriding (runtime polymorphism) and method overloading (compile-time polymorphism).
+it allows for an interface to represent different underlying forms (data types), and for methods to be reused and behave differently depending on the object that is calling them.
 #How to recognise it in a codebase:
+We can recognise polymorphism in a codebase by looking for methods that have the same name but different implementations in different classes, or for classes that implement the same interface but have different behaviours. The use of the "override" annotation in method declarations is a key indicator of polymorphism.
 #Example from the sales package (class and field / method / declaration), and why:
 
 #Pillar 4
 #Name and definition:
+Abstraction - is the practice of hiding the implementation details of a class or method and exposing only the essential features or behaviours to the user, allowing for a simplified and more manageable interface.
 #How to recognise it in a codebase:
+We can recognise abstraction in a codebase by looking for classes or methods that have a clear and well-defined interface, with implementation details hidden behind that interface. The use of abstract classes and interfaces is a key indicator of abstraction.
 #Example from the sales package (class and field / method / declaration), and why:
 
 
 === Question 3.1 (3 marks) ===
 #Answer below
-
+Refactoring is the process of restructuring existing code without changing its external behaviour, with the goal of improving its internal structure, readability, maintainability, and performance. It involves making small, incremental changes to the codebase to improve its design and reduce technical debt.
+Refactoring differs from fixing a bug or adding a new feature in that it doesnt change the functionality of the code, but rather improves its internal structure and design. Refactoring is often done to improve code quality, reduce complexity, and make the code easier to understand and maintain.
+RefundRulesService is a good candidate for refactoring because it has a large number of methods and a complex structure, which can make it difficult to understand and maintain. By refactoring this class, we can improve its readability, reduce complexity, and make it easier to test and maintain in the future.
+The class has methods with nested if statements and complex logic, which can be simplified and broken down into smaller, more manageable methods. Additionally, the class has a large number of dependencies, which can be reduced through dependency injection and other design patterns.
 
 === Question 3.2 (5 marks) ===
+Describe the development approach you would follow, both while you restructure the existing code and when you add this new rule. Name the approach and explain why it keeps behaviour safe. Then walk through each stage of the cycle it follows, saying what you would do at each stage for the R2 000 rule and how you know when to move on to the next stage.
 #Answer below
+For the team to be able to restructure the code witohut changing external behaviour as well as add a new rule to the bookings,the team would use the following development approaches:
+1. Test-Driven Development (TDD): This approach involves writing tests before writing the actual code. It ensures that the code meets the requirements and behaves as expected. By writing tests first, we can ensure that the new rule is implemented correctly and that existing functionality is not broken.
+2. Refactoring: This approach involves restructuring existing code without changing its external behaviour. It helps to improve the code's readability, maintainability, and performance. By refactoring the code, we can ensure that the new rule is implemented in a clean and efficient manner.
+The development cycle for TDD and Refactoring would follow these stages:
+1. Write a failing test: For the R2 000 rule, we would write a test that checks if the booking amount is less than R2 000. This test should fail initially because the rule has not been implemented yet.
+2. Write the minimum code to pass the test: We would then write the minimum code required to implement the R2 000 rule and make the test pass. This code should be simple and focused on passing the test.
+3. Run all tests: We would run all tests to ensure that the new rule does not break any existing functionality. If any tests fail, we would go back and fix the code until all tests pass.
+4. Refactor: Once all tests pass, we would refactor the code to improve its structure and readability. This may involve breaking down complex methods, removing duplicate code, and improving variable names. We would ensure that the refactoring does not change the external behaviour of the code.
+5. Repeat: We would repeat this cycle for any additional rules or changes that need to be implemented, ensuring that each change is tested and refactored before moving on to the next stage. We would know when to move on to the next stage when all tests pass and the code is clean and maintainable.
+
 
 
 === Question 4.1.1 (1 mark) ===
 #Answer below
+The -SNAPSHOT suffix is the version number used in Maven to indicate that the current version of the project is a development version, and not a final release/prudction version.
+A snapshot build should never be released to production because it may contaain incomplete or unstable code, and may not have been fully tested.
 
-
+The project's version is 2.7.0-SNAPSHOT. The last version released to customers was 2.6.4.
 === Question 4.1.2 (3 marks) ===
+Since 2.6.4, the following changes have been merged:
+
+A rounding defect in VipTicket.refundAmount() was fixed.
+A new class, WaitingList, was added. No existing code changed.
+The public method BoxOffice.totalRevenue() was renamed to grossRevenue(). A partner team's integration still calls totalRevenue().
 #Version I would release:
+I would release version 2.7.0 since it was a snapshot version and the changes made since 2.6.4 are significant enough to warrant a new release.
+The changes made were minor bug fixes and new features, which do not break existing functionality, but they do add new functionality and improve the overall performance of the system rather than patching a critical bug. Therefore, a new version number is appropriate to indicate that the system has been updated and improved.
+what each number of the version number means:
+- The first number (2) indicates a major release, which typically includes significant changes or new features that may not be backward compatible with previous versions.
+- The second number (7) indicates a minor release, which typically includes smaller changes or improvements that are backward compatible with previous versions.
+- The third number (0) indicates a patch release, which typically includes bug fixes or minor improvements that are backward compatible with previous versions.
 #Justification for each of the three changes:
+Justification for each of the three changes:
+1. The rounding defect in VipTicket.refundAmount() was fixed, which improves the accuracy of the refund amount calculation and ensures that customers are refunded the correct amount.
+2. The new class, WaitingList, was added, which provides a new feature for customers to join a waiting list for sold-out events. This improves the customer experience and provides additional functionality to the system.
+3. The public method BoxOffice.totalRevenue() was renamed to grossRevenue(), which improves the clarity and accuracy of the method name and ensures that partner teams are using the correct method name for integration. This change improves the overall maintainability and usability of the system.
 
 
 === Question 4.2 (4 marks) ===
 #Why could the tests reach the database driver but the packaged jar could not?
 #(The fix itself goes in pom.xml.)
 #Answer below
+The sqlite-jdbc dependency in pom.xml was set to <scope>test</scope>.
+This means that the dependency is only available during the test phase and is not included in the packaged jar. As a result, when the tests are run, they can access the database driver, but when the application is packaged and run, it cannot find the driver and fails to connect to the database.
+
+When running DatabaseSchemaTest, Maven places test-scoped dependencies on the test classpath, allowing the test suite to locate and load the SQLite JDBC driver without issues.
+However, when packaging the application into a fat JAR (ticketing-service-jar-with-dependencies.jar), the assembly plugin only bundles dependencies with compile or runtime scopes, excluding any test scoped libraries. As a result, the packaged JAR lacked the SQLite driver at runtime, causing DriverManager.getConnection() to fail with SQLException: No suitable driver found.
+Removing <scope>test</scope> makes the dependency available during compilation and packaging, including it inside the final JAR.
 
 
 === Question 4.3 (3 marks) ===
 #Why must the pipeline run its steps in this order?
 #(The pipeline itself goes in .gitlab-ci.yml.)
 #Answer below
+The pipeline must run its steps in this order to ensure that each step is completed successfully before moving on to the next step. This is important because each step depends on the successful completion of the previous step.
+1. The first step is to build the project, which compiles the code and creates the necessary artifacts. If the build fails, there is no point in running the tests or deploying the application.
+2. The second step is to run the tests, which ensures that the code is functioning as expected and that there are no regressions or bugs. If the tests fail, it indicates that there are issues with the code that need to be addressed before deployment.
+3. The third step is to package the application, which creates a deployable artifact. If the packaging fails, it indicates that there are issues with the build or the code that need to be addressed before deployment.
+4. The fourth step is to deploy the application, which makes it available for use. If the deployment fails, it indicates that there are issues with the deployment process that need to be addressed before the application can be used.
+
 
 
 === Question 4.4 (2 marks) ===
 #What is pom.xml for?
 #Two things this project's pom.xml defines, and what Maven does with each:
 #Answer below
+A pom.xml file is a configuration file used by Maven, a build automation tool for Java projects to manage and maintain project dependencies, build configurations, and other project-related information.
+If a project didnt have one, the development team would have to constantly download and manage dependencies manually, which would be time-consuming and error-prone. The pom.xml file allows developers to specify the dependencies their project needs, and Maven will automatically download and manage those dependencies for them.
+Two things this project's pom.xml defines:
+1. Dependencies: The pom.xml file defines the dependencies that the project needs to compile and run. Maven will automatically download and manage these dependencies, ensuring that the correct versions are used and that any conflicts are resolved.
+2. Build configuration: The pom.xml file defines the build configuration for the project, including the source and target Java versions, the build plugins to use, and any other build-related settings.
+Maven will use this configuration to compile the code, run tests, and package the application into a deployable artifact.
 
 
 === Question 5.4 (3 marks) ===
 #PRIMARY KEY vs UNIQUE, and why id rather than (event_id, seat_label)?
 #(The constraints themselves go in DatabaseSchema.java.)
 #Answer below
+Primary Key is a constraint that uniquely identified each record in a database table, and it cannot contain NULL values.
+A table can have only one primary key, which can consist of one or more columns (composite key).
+The primary key is used to enforce entity integrity and ensure that each record in the table is unique.
+
+UNIQUE constraint is a constraint that ensures that the values in a column or a combination of columns are unique across all records in the table.
+A table can have multiple UNIQUE constraints, and they can be applied to one or more columns.
+In this case, using id as the primary key is preferred over using (event_id, seat_label) because it provides a single, unique identifier for each record in the table, which simplifies queries and improves performance.
+Using a composite key of (event_id, seat_label) would require additional joins and could lead to more complex queries, while using a single id column as the primary key allows for simpler queries and better performance. Additionally, using a single id column allows for easier updates and deletions of records, as the primary key value can be used to identify the record to be updated or deleted, without having to specify the event_id and seat_label values.
 
 
 === Question 6.1 (4 marks) ===
-#Check 1:
-#Check 2:
-#Check 3:
+#Check 1: Unit test - This test checks the behaviour of a single method(RefundRulesService) in isolation from its dependencies and collaborators using mocks/stubs(We create Booking and Customer objects in memory). It confirms that the method behaves as expected for a given input and produces the correct output. It does not check how the method interacts with other parts of the system or how it behaves in a real-world scenario.
+#Check 2: Integration Test - This test checks the behaviour of multiple components(methods) work together as a group, including their interactions with each other and with external systems such as databases or APIs. It confirms that the components work together as expected and produce the correct output for a given input. It does not check how the components behave in a real-world scenario or how they interact with other parts of the system.
+#Check 3: Acceptance Test - This test checks the behaviour of the entire system as a whole, including its interactions with external systems and its behaviour in a real-world scenario. It confirms that the system meets the requirements and behaves as expected for a given input and produces the correct output. It does not check how the system behaves in isolation or how it interacts with other parts of the system.
 #What the third check confirms that the first two cannot:
-
+Acceptance tests confirm that the system meets the requirements and behaves ass intended in a real-world scenario, which cannot be confirmed by unit or integration tests.
+Acceptance tests are typically performed by end-users or stakeholders and focus on the overall functionality and usability of the system, rather than individual components or methods. They ensure that the system meets the needs of the users and that it is fit for purpose.
 
 === Question 6.2.1 (1 mark) ===
 #Answer below
-
+The intention of diagramming when designing or documenting a system is to provide a visual representation of the system's structure, behaviour, and interactions.
+Teams draw these instead of only reading code because diagrams can help to communnicate complex ideas more effectively, identify potential issues/blockers and provide a shared understanding of the system among team members and stakeholders.
+Diagrams can also help to identify patterns, relationships, and dependencies that may not be immediately apparent from reading code alone.
+Additionally, diagrams can serve as a reference for future development and maintenance of the system.
 
 === Question 6.2.2 (1 mark) ===
 #Answer below
+UML is a standardised modeling language used to created diagrams that represent the structure, behaviour and interactions of a system.
+It is used to communicate complex ideas and concepts in a visual format, making it easier for team members and stakeholders to understand the system's design and functionality.
+UML diagrams can be used to represent various aspects of a system, including its architecture, components, relationships, and interactions.
 
 
 === Question 6.2.3 (1 mark) ===
 #Answer below
+Structural UML diagrams represent the static aspect of a system, including its components, classes, objects, and their relationships. They provide a visual representation of the system's architecture and help to identify patterns, dependencies, and relationships between different components.
+Behavioral UML diagrams represent the dynamic aspect of a system, including its interactions, processes, and workflows. They provide a visual representation of how the system behaves over time and help to identify potential issues, bottlenecks, and areas for improvement in the system's design and functionality.
+- Class diagram: Structural UML
+- Sequence diagram: Behavioral UML
+- Use-Case diagram: Behavioral UML
 
 
 === Question 6.2.4 (1 mark) ===
 #Answer below
-
+I would show a sequence diamgran for the scanning and validation of the user's ticket at the entrance because it would demonstrate the interactions between the users App, the ticketing system and the database, and how they work together in the process of admitting the user to the event.
+It would also show the order of events and the flow of data between the different components, which would help to identify potential issues or bottlenecks in the process. Additionally, a sequence diagram would provide a clear and concise visual representation of the process, making it easier for team members and stakeholders to understand how the system works.
+A ckass diagrram would not be appropriate for this scenario because it focuses on the static structure and architecture of the system, rather than the dynamic aspect of its behaviour and interactions.
 
 === Question 6.3 - Class diagram (5 marks) ===
 #Draw your class diagram below (PlantUML text or ASCII art)
@@ -106,39 +209,90 @@ DO NOT CHANGE THE FORMAT -- DO NOT CREATE A NEW txt file
 
 === Question 6.3 - Explanation (3 marks) ===
 #Answer below
+Produce a UML class diagram of these two classes from the ticketing-service model package: Booking and GateScan. (You do not need to include Customer, TicketCategory or ScanOutcome. Where a field or method uses one of those types, just write the type name, in the same way you would write String.)
+Draw your diagram as PlantUML text (or ASCII art) in answers.txt, under Question 6.3):
+PlantUML Text diagram:
+@startuml
+class Booking {
+  - id: int
+  - customer: Customer
+  - ticketCategory: TicketCategory
+  - amount: double
+  + getId(): int
+  + getCustomer(): Customer
+  + getTicketCategory(): TicketCategory
+  + getAmount(): double
+}
+class GateScan {
+  - id: int
+  - booking: Booking
+  - scanOutcome: ScanOutcome
+  + getId(): int
+  + getBooking(): Booking
+  + getScanOutcome(): ScanOutcome
+}
+Booking "1" -- "0..*" GateScan : has
+@enduml
 
 
 === Question 7.1.2 (4 marks) ===
 #(The script itself goes in webdev/ticket-picker/js/picker.js.)
 #Answer below
+Once the user opens the ticket picker page in their browser, the browser sends an HTTP GET request to the server for the ticket-picker page. The server responds with the HTML, CSS, and JavaScript files needed to render the page. The browser then parses the HTML and applies the CSS styles to display the page correctly.
 
+When the user clicks on the "VIP" button, a JavaScript event listener attached to that button is triggered. This event listener calls a function that updates the quantity of VIP tickets selected by the user. The function retrieves the current quantity of VIP tickets from a variable or state and increments it by one.
+It then calculates the total cost of the selected VIP tickets by multiplying the quantity by the price of a single VIP ticket. The function updates the text content of a designated HTML element on the page to display the message "You chose VIP x 2: R3000", reflecting the updated quantity and total cost.
 
 === Question 7.2.1 (2 marks) ===
+When the customer clicks Login, the browser sends the form to the server. Explain the difference between an HTTP GET and an HTTP POST request, and say which one the login form and the Pay now button should use, and why. (2 marks)
 #Answer below
-
+HTTP GET requests are used to retrieve data from a server and should not have any side effects on the server's state. They append data to the URL as query parameters, which cant be used for sensitive information like passwords.
+HTTP POST requests are used to send data to a server to create or update resources and can have side-effects on the server's state They send data in a request body, which is more secure for sensitive information like a password.
 
 === Question 7.2.2 (2 marks) ===
 #Answer below
+HTTP being described as stateless means that requests made by a client to a server are independent of eachother, and the server does nto retaain any information about previous requests.
+Each request is treated as a new and separate interaction, and the server does not maintain any context or session information between requests. This means that the server does not remember any previous interactions with the client, and each request must contain all the necessary information for the server to process it.
 
+TicketWave can still know which user is asking for "my tickets" page because the server can use session management techniques, such as cookies or tokens, to assess the user's identity and maintain state across multiple requests.
+When a user logs in, the server can generate a unique session identifier and send it to the client as a cookie or token. The client then includes this identifier in subsequent requests, allowing the server to associate those requests with the user's session and retrieve any relevant information, such as their tickets.
 
 === Question 7.2.3 (3 marks) ===
-#1.
-#2.
-#3.
 
+#1. HTTP METHOD: GET, URL Path: /events/upcoming, Response: 200 OK, Body: JSON array of upcoming events
+#2. HTTP METHOD: GET, URL Path: /events/{eventId}, Response: 200 OK, Body: JSON object of event details
+#3. HTTP METHOD: POST, URL Path: /tickets/77/refund, Response: 400 Bad Request, Body: JSON object with error message indicating that the ticket has already been scanned and cannot be refunded.
 
 === Question 7.2.4 (1 mark) ===
+After a successful payment, the server tells the browser to go to a confirmation page instead of returning the confirmation page straight away. Explain why web applications do this. (1 mark)
 #Answer below
-
+This is because of the Post/Redirect/Get (PRG) pattern, which is a web development design pattern that prevents duplicate form submissions and improves user experience.
+After a successful payment, the server responds with a redirect to a confirmation page instead of returning the confirmation page directly. This ensures that if the user refreshes the confirmation page, it does not resubmit the payment request, preventing accidental duplicate transactions.
+It also allows users to bookmark or share the confirmation page without triggering any unintended actions.
 
 === Question 7.3.1 (2 marks) ===
 #Answer below
+Server-side page generation is a web development approach where the server generates the HTML content of a web page and sends it to the client's browser. The work happens on the server, and the browser receives a fully rendered HTML page that can be displayed immediately.
+Client-side page generation is a web development approach where the server sends a minimal HTML page to the client's browser, and the browser uses JavaScript to generate the content of the page dynamically. The work happens on the client's browser, and the browser receives a minimal HTML page along with JavaScript code that generates the content of the page.
+A single page application (SPA) is a web application that loads a single HTML page and dynamically updates the content of the page as the user interacts with the application. The work happens on the client's browser, and the browser receives a single HTML page along with JavaScript code that handles the dynamic content updates. The SPA approach allows for a more seamless user experience, as the page does not need to be reloaded for each interaction, and the application can provide a more responsive and interactive experience.
+
 
 
 === Question 7.3.2 (2 marks) ===
 #Answer below
+An API Endpoint is a specific URL or URI that represents a resource or a collection of resources in a web application.
+It is a point of interaction between the client and the server, where the client can send requests to the server to retrieve or manipulate data. API endpoints are typically defined in a RESTful API, where each endpoint corresponds to a specific resource or action that can be performed on that resource.
+It usually returns its data as JSON rather that HTML because JSON is a lightweight data interchange format that is easy to read and write for both humans and machines. It is also language-independent, making it a popular choice for APIs that need to support multiple programming languages. JSON is also more efficient than HTML for transmitting data over the network, as it requires less bandwidth and processing power to parse and generate.
 
 
 === Question 7.3.3 (2 marks) ===
+The business now has two requirements for this page:
+
+The seat map must show seats sold to other customers within about ten seconds, without the whole page reloading.
+The event title and price list must still be readable by search engines and by customers whose browsers have JavaScript switched off.
+For each requirement, say which approach meets it and justify your choice. Is there a way to meet both? (2 marks)
 #Answer below
+1. The requirement for the seat map to show seats sold to other customers within about ten seconds, without the whole page reloading, can be met using client-side page generation or a single-page application (SPA) approach. This is because these approaches allow for dynamic updates to the content of the page without requiring a full page reload, enabling real-time updates to the seat map as seats are sold.
+2. The requirement for the event title and price list to be readable by search engines and by customers whose browsers have JavaScript switched off can be met using server-side page generation. This is because server-side page generation produces fully rendered HTML pages that can be easily indexed by search engines and displayed to users without relying on JavaScript.
+To meet both requirements, a hybrid approach can be used. The event title and price list can be rendered on the server-side to ensure they are accessible to search engines and users without JavaScript, while the seat map can be updated dynamically using client-side JavaScript or an SPA approach. This way, both requirements can be satisfied, providing a seamless user experience while ensuring accessibility and search engine optimization.
 
